@@ -139,7 +139,7 @@ li.bigger-margin {
     align-content: center;
     grid-template-columns: 100px auto;
     grid-template-rows: 4fr 6fr;
-    column-gap: 70px;
+    column-gap: 20px;
 }
 
 .header-bottom .right {
