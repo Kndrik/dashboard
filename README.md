@@ -1,2 +1,2 @@
 # dashboard
-The Odin Project's dashboard project
+A dashboard page project using CSS grid.
