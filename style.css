@@ -4,6 +4,9 @@ body {
     padding: 0;
     margin: 0;
     font-family: 'Roboto', sans-serif;
+
+    --main-color: #6366f1;
+    --secondary-color: rgb(223, 220, 224);
 }
 
 p {
@@ -12,7 +15,7 @@ p {
 
 .container {
     display: grid;
-    grid-template-columns: max(20%, 350px) 1fr;
+    grid-template-columns: max(10%, 350px) 1fr;
     grid-template-rows: 250px max(calc(100% - 250px), calc(100vh - 250px));
 }
 
@@ -20,7 +23,7 @@ p {
     position: relative;
     grid-column: 1/2;
     grid-row: 1/3;
-    background-color: #6366f1;
+    background-color: var(--main-color);
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     color: white;
 }
@@ -51,16 +54,31 @@ ul {
     list-style: none;
     margin: 0 30px;
     padding: 0;
+    position: sticky;
+    top: 20px;
 }
 
 ul .material-symbols-outlined {
     font-size: 32px;
 }
 
-li span:last-child {
+a {
+    text-decoration: none;
+}
+
+a.user-name {
+    color: black;
+}
+
+li a {
+    color: white;
     font-size: 23px;
     font-weight: 500;
     margin-left: 25px;
+}
+
+li a:hover {
+    font-size: 24px;
 }
 
 li {
@@ -105,7 +123,7 @@ li.bigger-margin {
 
 .search-bar {
     border: none;
-    background-color: rgb(222, 216, 230);
+    background-color: var(--secondary-color);
     height: 44px;
     max-width: 80%;
     border-radius: 22px;
@@ -113,6 +131,7 @@ li.bigger-margin {
     width: auto;
     padding-left: 15px;
     font-size: 18px;
+    color: rgb(51, 51, 51);
 }
 
 .search-bar:focus {
@@ -152,11 +171,28 @@ li.bigger-margin {
     height: 50px;
     width: 110px;
     border-radius: 25px;
-    background-color: #6366f1;
+    background-color: var(--main-color);
     border: none;
     color: white;
     font-size: 16px;
     font-weight: 700;
+}
+
+.header-bottom .right button:hover {
+    background-color: #595bdd;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button.material-symbols-outlined {
+    border: none;
+    background-color: transparent;
+}
+
+button.material-symbols-outlined:hover {
+    color: var(--main-color);
 }
 
 .small-picture {
@@ -196,7 +232,7 @@ li.bigger-margin {
 .content {
     grid-column: 2/3;
     grid-row: 2/3;
-    background-color: rgb(222, 216, 230);
+    background-color: var(--secondary-color);
     display: grid;
     padding: 30px;
     gap: 30px;
@@ -258,6 +294,11 @@ h1 {
     grid-template-columns: 10px auto;
 }
 
+.card.project:hover {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    cursor: pointer;
+}
+
 .card.project .left {
     background-color: rgb(255, 174, 0);
     border-top-left-radius: 10px;
@@ -284,10 +325,13 @@ h1 {
 
 .card-icons {
     display: flex;
-    color: rgb(90, 90, 90);
     justify-content: flex-end;
     align-content: center;
     gap: 28px;
+}
+
+.card-icons button {
+    color: rgb(90, 90, 90);
 }
 
 .card-icons .material-symbols-outlined {
@@ -299,6 +343,14 @@ h1 {
     max-height: 100px;
     padding: 20px 5px;
     overflow: hidden;
+}
+
+.announcement:hover {
+    cursor: pointer;
+}
+
+.announcement:hover .title {
+    text-decoration: underline;
 }
 
 .announcement:last-child {
@@ -329,6 +381,14 @@ h1 {
     column-gap: 10px;
 }
 
+.trending-project:hover {
+    cursor: pointer;
+}
+
+.trending-project:hover .usertag {
+    text-decoration: underline;
+}
+
 .trending-project .small-picture {
     grid-column: 1/2;
     grid-row: 1/3;
@@ -342,7 +402,7 @@ h1 {
 .project-name {
     align-self: start;
     padding-top:5px;
-    color: rgba(90, 90, 90, 0.5);
+    color: rgba(90, 90, 90);
 }
 
 .trendings .card {
